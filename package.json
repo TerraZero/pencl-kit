@@ -1,0 +1,19 @@
+{
+  "name": "pencl-kit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TerraZero/pencl-kit.git"
+  },
+  "author": "TerraZero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TerraZero/pencl-kit/issues"
+  },
+  "homepage": "https://github.com/TerraZero/pencl-kit#readme"
+}
