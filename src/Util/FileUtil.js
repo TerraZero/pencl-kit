@@ -50,4 +50,24 @@ module.exports = class FileUtil {
     }
   }
 
+  /**
+   * @param {string} root
+   * @param {string} path 
+   */
+  static prepareDir(root, path) {
+    root = Path.normalize(root);
+    path = Path.dirname(Path.normalize(path));
+    if (path.startsWith(root)) {
+      path = path.substring(root.length);
+    }
+    
+    let file = root;
+    for (const part of path.split(Path.sep)) {
+      file = Path.join(file, part);
+      if (!FS.existsSync(file)) {
+        FS.mkdirSync(file);
+      }
+    }
+  }
+
 }
