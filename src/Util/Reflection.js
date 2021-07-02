@@ -130,6 +130,33 @@ module.exports = class Reflection {
     return newObject;
   }
 
+  /**
+   * Merge only if already exist in valid object.
+   * 
+   * @param {Object} valid 
+   * @param {Function} cb 
+   * @param  {...any} objects 
+   * @returns 
+   */
+  static mergeValid(valid, cb = null, ...objects) {
+    const newObject = {};
+
+    for (const field in valid) {
+      newObject[field] = valid[field];
+    }
+    
+    for (const object of objects) {
+      for (const field in object) {
+        if (newObject[field] === undefined) {
+          if (typeof cb === 'function') cb(valid, object, field);
+        } else {
+          newObject[field] = object[field];
+        }
+      }
+    }
+    return newObject;
+  }
+
   static mergeDeep(target, ...sources) {
     if (!sources.length) return target;
     const source = sources.shift();
