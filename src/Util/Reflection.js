@@ -119,6 +119,17 @@ module.exports = class Reflection {
     return (item && typeof item === 'object' && !Array.isArray(item));
   }
 
+  static merge(...objects) {
+    const newObject = {};
+    
+    for (const object of objects) {
+      for (const field in object) {
+        newObject[field] = object[field];
+      }
+    }
+    return newObject;
+  }
+
   static mergeDeep(target, ...sources) {
     if (!sources.length) return target;
     const source = sources.shift();
