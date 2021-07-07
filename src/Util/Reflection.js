@@ -31,6 +31,16 @@ module.exports = class Reflection {
   }
 
   /**
+   * @param {(Object|typeof Object)} struct 
+   * @param {string} instanceAdd 
+   * @param {string} staticAdd 
+   * @returns {string}
+   */
+  static getClassDescription(struct, instanceAdd = '', staticAdd = '') {
+    return struct.constructor !== Function ? struct.constructor.name + instanceAdd : struct.name + staticAdd;
+  }
+
+  /**
    * @param {object} data 
    * @param {string} name 
    * @returns {boolean}

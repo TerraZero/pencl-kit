@@ -1,3 +1,3 @@
-const PenclError = require('./PenclError');
+const PenclError = require('../PenclError');
 
 module.exports = class PenclDefinitionError extends PenclError {}
