@@ -259,15 +259,15 @@ module.exports = class Reflection {
   static parseValue(value) {
     if (value === null || value === undefined) return null;
     try {
-      return JSON.parse(data);
+      return JSON.parse(value);
     } catch (e) {}
-    if (data + '' === parseInt(data) + '') {
-      return parseInt(data);
+    if (value + '' === parseInt(value) + '') {
+      return parseInt(value);
     }
-    if (data + '' === parseFloat(data) + '') {
-      return parseFloat(data);
+    if (value + '' === parseFloat(value) + '') {
+      return parseFloat(value);
     }
-    return data;
+    return value;
   }
 
 }
