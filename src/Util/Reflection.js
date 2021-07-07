@@ -31,20 +31,13 @@ module.exports = class Reflection {
   }
 
   /**
-   * @callback checkDefinedCallback
-   * @param {value}
-   * @returns {boolean}
-   */
-
-  /**
    * @param {object} data 
    * @param {string} name 
-   * @param {checkDefinedCallback} isDefined 
    * @returns {boolean}
    */
   static hasDeep(data, name, isDefined = null) {
-    if (isDefined === null) isDefined = (value) => value !== undefined;
-    const value = this.getDeep(data, name, undefined);
+    if (isDefined === null) isDefined = (value) => value !== null;
+    const value = this.getDeep(data, name, null);
     return isDefined(value);
   }
 
