@@ -252,4 +252,21 @@ module.exports = class Reflection {
     return message;
   }
 
+  /**
+   * @param {string} value
+   * @returns {*}
+   */
+  static parseValue(value) {
+    try {
+      return JSON.parse(data);
+    } catch (e) {}
+    if (data + '' === parseInt(data) + '') {
+      return parseInt(data);
+    }
+    if (data + '' === parseFloat(data) + '') {
+      return parseFloat(data);
+    }
+    return data;
+  }
+
 }
