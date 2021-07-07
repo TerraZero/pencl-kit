@@ -257,6 +257,7 @@ module.exports = class Reflection {
    * @returns {*}
    */
   static parseValue(value) {
+    if (value === null || value === undefined) return null;
     try {
       return JSON.parse(data);
     } catch (e) {}
