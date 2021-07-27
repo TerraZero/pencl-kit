@@ -255,6 +255,13 @@ module.exports = class Reflection {
     return message;
   }
 
+  static replaceCallback(message, callback) {
+    message = message.replace(new RegExp('(\\{[^}]*\\})', 'g'), (match, ...info) => {
+      return callback(match.substring(1, match.length - 1), message, info);
+    });
+    return message;
+  }
+
   /**
    * @param {string} value
    * @returns {*}

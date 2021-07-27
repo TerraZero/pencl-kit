@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/TerraZero/pencl-kit/issues"
   },
-  "homepage": "https://github.com/TerraZero/pencl-kit#readme"
+  "homepage": "https://github.com/TerraZero/pencl-kit#readme",
+  "dependencies": {}
 }
